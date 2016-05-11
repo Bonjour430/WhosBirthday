@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8e24aa</color>
+    <color name="colorPrimaryDark">#4a148c</color>
+    <color name="colorAccent">#ac47bc</color>
+    <color name="tabwidget_selected">#4A148C</color>
+    <color name="tabwidget_unselected">#AB47BC</color>
+    <color name="windowBackground">#EEEEEE</color>
+</resources>

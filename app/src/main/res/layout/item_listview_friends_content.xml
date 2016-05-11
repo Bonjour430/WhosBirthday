@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--生日列表中，每行所显示的每个好友大概信息+倒计日-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="5dp"
+    android:descendantFocusability="blocksDescendants"
+    >
+    <!--头像-->
+    <ImageView
+        android:id="@+id/iv_itemAll_head"
+        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/friend_image_shape"
+        android:src="@drawable/hawkeye_pic"
+
+        android:layout_gravity="center_vertical"/>
+    <!--姓名 + 生日日期-->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        android:gravity="left"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp">
+        <TextView
+            android:id="@+id/tv_itemAll_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingBottom="5dp"
+            android:gravity="left"
+            android:text="詹姆斯"/>
+        <TextView
+            android:id="@+id/tv_itemAll_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textSize="18sp"
+            android:text="1990/10/10"/>
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_cake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_cake_red_a700_18dp" />
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1.7"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+       >
+        <!--生日倒计时-->
+    <TextView
+        android:id="@+id/tv_itemAll_daysleft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#5E35B1"
+        android:text="222"
+        android:layout_toLeftOf="@+id/tv_day"
+        android:layout_marginRight="3dp"
+        />
+
+
+        <!--点击进入朋友详情-->
+    <ImageButton
+        android:id="@+id/ib_frdetail_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_more_horiz_purple_400_24dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"/>
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#5E35B1"
+        android:text="天"
+        android:layout_toLeftOf="@id/ib_frdetail_info"
+        android:layout_alignBottom="@+id/ib_frdetail_info"
+        android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+</LinearLayout>

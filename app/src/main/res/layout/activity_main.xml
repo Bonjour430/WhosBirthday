@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!--Toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/Theme.Drawer.ArrowAnimation"
+        toolbar:title="生日列表">
+
+    </android.support.v7.widget.Toolbar>
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--主内容-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            >
+            <!--左右滑动tab-->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tl_main_tabs"
+                app:tabSelectedTextColor="#ffffff"
+                app:tabTextColor="@android:color/black"
+                app:tabIndicatorColor="#00BFA5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                toolbar:tabMode="fixed"
+                android:background="#8E24AA"
+                toolbar:tabIndicatorHeight="3dp"/>
+            <!--填充好友内容-->
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_main_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tl_main_tabs">
+            </android.support.v4.view.ViewPager>
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/fam_main_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_main_addNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_edit"
+                    fab:fab_size="mini"
+                    fab:fab_label="便签" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_edit"
+                    fab:fab_size="mini"
+                    fab:fab_label="增加分组" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_main_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_edit"
+                    fab:fab_size="mini"
+                    fab:fab_label="增加记录" />
+            </com.github.clans.fab.FloatingActionMenu>
+
+        </RelativeLayout>
+
+        <!--左侧菜单内容-->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/navigation_drawer_header"
+            app:menu="@menu/navigation_drawer_menu"
+            toolbar:itemTextColor="#000000"/>
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</LinearLayout>

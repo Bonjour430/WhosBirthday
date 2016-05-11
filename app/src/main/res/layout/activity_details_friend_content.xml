@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--朋友信息详情-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_details_friends_info"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        toolbar:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        toolbar:title="谁生日">
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/rl_Fridetail_pic"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/contact_background">
+
+        <!--添加照片按钮-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/camera_button_shape"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_a_photo_grey_600_36dp"
+                android:background="@android:color/transparent"/>
+        </RelativeLayout>
+        <!--姓名-->
+        <TextView
+            android:id="@+id/tv_details_name_into_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="勒布朗-詹姆斯"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
+        <!--性别 信息，图标显示-->
+        <ImageView
+            android:id="@+id/iv_frdeatil_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_details_name_into_picture"
+            android:src="@drawable/gender_male"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+
+    <!--提醒开关和 频率设定-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:padding="5dp">
+        <Switch
+            android:id="@+id/sw_frdetail_mind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_marginLeft="8dp"
+            android:text="提醒"
+            android:switchPadding="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:id="@+id/ib_frdetail_mind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_alarm_add_purple_600_24dp"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            >
+        </ImageButton>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ring at"
+            android:layout_toLeftOf="@id/ib_frdetail_mind"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"/>
+    </RelativeLayout>
+<!--姓名显示-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_account_circle_black_24dp"
+                android:layout_gravity="center_vertical"/>
+             <EditText
+                 android:id="@+id/et_frdetail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="10dp"
+                 android:enabled="false"
+                 android:hint="姓名"/>
+
+    </LinearLayout>
+    <!--日期显示
+    有开源控件滑动选择日期: wheelview
+    https://github.com/wangjiegulu/WheelView-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_date_range_black_24dp"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/et_frdetail_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="10dp"
+            android:enabled="false"
+            android:hint="生日"/>
+
+    </LinearLayout>
+    <!--电话显示-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_call_black_24dp"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/et_frdetail_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="10dp"
+            android:enabled="false"
+            android:hint="电话"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_nature_people_purple_600_18dp"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/et_frdetail_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="10dp"
+            android:enabled="false"
+            android:hint="星座"/>
+
+    </LinearLayout>
+    <!--星座显示-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_brightness_4_black_24dp"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/et_frdetail_zodiac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="10dp"
+            android:enabled="false"
+            android:hint="星座"/>
+
+    </LinearLayout>
+</LinearLayout>
